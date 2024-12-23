@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elio's dream</title>
+    <link rel="stylesheet" href="stylecreation.css">
+</head>
+<body>
+  
+    <!-- Car Images -->
+    <img src="image/carback.png" alt="Car Background" class="car-back">
+    <img src="image/car.png" alt="Car" class="car">
+
+    <script>
+        function toggleMenu() {
+            const menuLinks = document.querySelector('.menu-links');
+            menuLinks.classList.toggle('active');
+        }
+    
+        // Select the car element
+        const car = document.querySelector('.car');
+    
+        // Add event listener to the car image
+        car.addEventListener('click', () => {
+            // Add the animation class to the car
+            car.classList.add('car-falling');
+    
+            // After the animation finishes (3s in this case), navigate to art.html
+            setTimeout(function() {
+                window.location.href = 'art.html'; // Redirect to art.html
+            }, 3000); // Match the duration of the animation (3000ms = 3s)
+        });
+    </script>
+    
+</body>
+</html>

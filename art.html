@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRÉATION</title>
+    <link rel="stylesheet" href="styleart.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav">
+        <ul class="nav-links">
+            <li><a href="profile.html">MENU</a></li>
+        </ul>
+    </nav>
+
+    <!-- Car GIF at the top -->
+    <div class="car-gif-container">
+        <img src="image/carin.gif" class="car-gif" alt="Car Animation">
+    </div>
+
+    <!-- Title -->
+    <header id="page-title">
+        CRÉATION
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select the GIF element
+            const gif = document.querySelector('.car-gif');
+
+            // Set a timeout to remove the GIF after its duration
+            setTimeout(() => {
+                gif.style.display = 'none'; // Hide the GIF
+            }, 5000); // Adjust the time (in ms) to match the GIF's duration
+        });
+    </script>
+</body>
+</html>
