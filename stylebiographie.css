@@ -1,0 +1,241 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 100;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding-top: 5rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Desktop Navigation */
+#desktop-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: rgb(0 74 173);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #A96DA3;
+}
+
+/* Title */
+#page-title {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    color: rgb(0 74 173);
+    font-weight: bold;
+    text-align: center;
+    z-index: 1002; /* Higher than the balls */
+}
+
+/* Floating Balls Left - Fixed in position */
+.floating-balls.left .ball1 {
+    position: fixed;
+    top: 50px; /* Increased top value */
+    left: 21.7642px;
+    width: clamp(80px, 6vw, 120px); /* Reduced size range */
+    z-index: 10; /* Lower than text, above other elements */
+    animation: float 2s ease-in-out infinite; /* Apply float animation */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+}
+
+.floating-balls.left .ball2 {
+    position: fixed;
+    top: 170px; /* Increased top value */
+    left: -8.15275px;
+    width: clamp(90px, 7vw, 130px); /* Reduced size range */
+    z-index: 10; /* Lower than text, above other elements */
+    animation: float 2s ease-in-out infinite; /* Apply float animation */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+}
+
+.floating-balls.left .ball3 {
+    position: fixed;
+    top: 327px; /* Increased top value */
+    left: 36.3928px;
+    width: clamp(100px, 8vw, 140px); /* Reduced size range */
+    z-index: 10; /* Lower than text, above other elements */
+    animation: float 2s ease-in-out infinite; /* Apply float animation */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+}
+
+.floating-balls.left .ball4 {
+    position: fixed;
+    top: 488px; /* Increased top value */
+    left: -8.82844px;
+    width: clamp(80px, 6vw, 120px); /* Reduced size range */
+    z-index: 10; /* Lower than text, above other elements */
+    animation: float 2s ease-in-out infinite; /* Apply float animation */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+}
+
+.floating-balls.left .ball5 {
+    position: fixed;
+    top: 605px; /* Increased top value */
+    left: -21.3211px;
+    width: clamp(90px, 7vw, 130px); /* Reduced size range */
+    z-index: 10; /* Lower than text, above other elements */
+    animation: float 2s ease-in-out infinite; /* Apply float animation */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+}
+
+/* Floating Balls Right - Fixed in position */
+.floating-balls.right .ball6 {
+    position: fixed;
+    top: 50px; /* Increased top value */
+    right: -15.0181px;
+    width: clamp(90px, 7vw, 130px); /* Reduced size range */
+    z-index: 10; /* Lower than text, above other elements */
+    animation: float 2s ease-in-out infinite; /* Apply float animation */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+}
+
+.floating-balls.right .ball7 {
+    position: fixed;
+    top: 245px; /* Increased top value */
+    right: -11.1732px;
+    width: clamp(100px, 8vw, 140px); /* Reduced size range */
+    z-index: 10; /* Lower than text, above other elements */
+    animation: float 2s ease-in-out infinite; /* Apply float animation */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+}
+
+.floating-balls.right .ball8 {
+    position: fixed;
+    top: 425px; /* Increased top value */
+    right: 16.5212px;
+    width: clamp(80px, 6vw, 120px); /* Reduced size range */
+    z-index: 10; /* Lower than text, above other elements */
+    animation: float 2s ease-in-out infinite; /* Apply float animation */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+}
+
+.floating-balls.right .ball9 {
+    position: fixed;
+    top: 549px; /* Increased top value */
+    right: -26.2792px;
+    width: clamp(80px, 6vw, 120px); /* Reduced size range */
+    z-index: 10; /* Lower than text, above other elements */
+    animation: float 2s ease-in-out infinite; /* Apply float animation */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+}
+
+.floating-balls.right .ball10 {
+    position: fixed;
+    top: 680px; /* Increased top value */
+    right: 22.7586px;
+    width: clamp(80px, 6vw, 120px); /* Reduced size range */
+    z-index: 10; /* Lower than text, above other elements */
+    animation: float 2s ease-in-out infinite; /* Apply float animation */
+    transition: filter 0.3s ease-in-out; /* Smooth transition for filter */
+}
+
+
+
+/* Floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Move up */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.centered-text {
+    text-align: center;
+    font-size: 3vh; /* Use viewport height for font size */
+    line-height: 1.5;
+    max-width: 100%; /* Adjust the max-width for better alignment */
+    margin: 2rem auto; /* Added margin to create space above and below */
+    z-index: 1001; /* Higher than balls, below the title */
+    padding: 5rem 7rem; /* Added padding on top and bottom, and 10rem on left and right */
+    /* Removed pointer-events: none; */
+}
+
+.pink-link {
+    color: #a96cad; /* Pink color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease-in-out; /* Smooth transition */
+    font-weight: 400;
+    
+}
+
+.pink-link:hover {
+    color: #FF1493; /* Darker pink when hovered */
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Image container styles */
+#image-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000; /* Ensure it's above everything else */
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 90%;  /* Prevent image from being too large */
+    max-height: 80vh; /* Ensure the image stays within the viewport */
+    transition: opacity 0.3s ease-in-out;  /* Smooth transition */
+}
+
+/* Fade-in and fade-out animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

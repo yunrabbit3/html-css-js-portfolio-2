@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHILOSOPHIE</title>
+    <link rel="stylesheet" href="stylephilosophie.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav">
+        <ul class="nav-links">
+            <li><a href="profile.html">MENU</a></li>
+        </ul>
+    </nav>
+
+    <!-- Title -->
+    <header id="page-title">
+        PHILOSOPHIE
+    </header>
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <video id="philosophie-video" width="80%" height="auto" controls>
+            <source src="philo/philosophie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Vitruve Image at the bottom -->
+    <div class="vitruve-container">
+        <a href="vitruve.html" id="vitruve-link">
+            <img src="philo/vitruve.png" alt="Vitruve Image" class="vitruve-image" id="vitruve-img">
+        </a>
+    </div>
+
+    <script>
+        const video = document.getElementById('philosophie-video');
+        const vitruveImage = document.getElementById('vitruve-img');
+        const vitruveLink = document.getElementById('vitruve-link');
+
+        // Add event listener to play the video when clicked
+        video.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+
+        // Add event listener to animate Vitruve image when clicked
+        vitruveImage.addEventListener('click', function(event) {
+            event.preventDefault();  // Prevent immediate navigation
+
+            // Add the animation class to start the animation
+            vitruveImage.classList.add('vitruve-animating'); 
+
+            // Wait for the animation to finish before redirecting
+            setTimeout(function() {
+                window.location.href = vitruveLink.href;  // Redirect to vitruve.html after the animation
+            }, 1500);  // Delay matches the animation duration (1.5s)
+        });
+    </script>
+</body>
+</html>

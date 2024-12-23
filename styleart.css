@@ -1,0 +1,87 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 100;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* DESKTOP NAV */
+#desktop-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: rgb(0 74 173);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #A96DA3;
+}
+
+/* Centered Title */
+#page-title {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    color: rgb(0 74 173);
+    font-weight: bold;
+    text-align: center;
+    z-index: 999;
+}
+
+/* Car Images */
+.car-gif {
+    width: 600px; /* Fixed width for the base image */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 10px; /* Fixed position from the top */
+    right: 80px; /* Align it to the right of the screen */
+    transform: translate(50%, -50%); /* Center the image horizontally from the right */
+    z-index: 1;
+}
+
+.car-gif-container {
+    width: 120px; /* Fixed width for the top image */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 10px; /* Fixed position from the top */
+    right: 80px; /* Align it to the right of the screen */
+    transform: translate(50%, -50%); /* Center the image horizontally from the right */
+    z-index: 2; /* Layer above car-back */
+    transition: transform 1s ease-in-out;
+}

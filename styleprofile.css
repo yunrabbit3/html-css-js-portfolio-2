@@ -1,0 +1,96 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Londrina Solid', sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* General Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; /* Adjust container width */
+    max-width: 1200px; /* Prevent it from stretching too much on large screens */
+    height: 100%; /* Ensure full-height layout */
+}
+
+/* Sommaire Section */
+.sommaire {
+    flex: 1; /* Take up equal space */
+    display: flex;
+    justify-content: flex-start; /* Align content to the start */
+    align-items: center;
+    padding: 20px;
+    position: relative; /* Ensure sommaire is on top */
+    z-index: 2; /* Ensure sommaire appears above the GIF */
+}
+
+.nav-links {
+    list-style-type: none;
+    font-size: 5rem; /* Large text for sommaire */
+    line-height: 3.5rem; /* Add spacing between items */
+    color: #004AAD;
+    display: flex; /* Arrange links horizontally */
+    flex-direction: column; /* Stack links vertically */
+}
+
+.nav-links li {
+    margin-bottom: 80px; /* Add space between the list items */
+}
+
+.nav-links li:last-child {
+    margin-bottom: 0; /* Remove margin from the last item */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #004AAD;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #A96DA3; /* Change color on hover */
+}
+
+
+/* GIF Section */
+.gif-container {
+    flex: 1; /* Allow the GIF container to fill available space */
+    display: flex;
+    justify-content: flex-start; /* Align the content to the left inside the container */
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    position: relative; /* Make the container relative to allow absolute positioning inside */
+    width: 100%; /* Full width of the viewport */
+    margin-right: -13%;
+}
+
+/* GIF positioning */
+.gif {
+    position: absolute; /* Position the GIF absolutely inside the container */
+    right: 0; /* Align the right edge of the GIF to the right edge of the screen */
+    width: auto; /* Maintain aspect ratio */
+    height: 100%; /* Scale to full height of the viewport */
+    object-fit: cover; /* Ensure the GIF fills the container */
+    border-radius: 10px; /* Optional: Rounded corners */
+    z-index: 1; /* Ensure the GIF is behind the sommaire */
+}
+
+
+
+/* Hide the audio player from view */
+audio {
+    display: none;
+}
