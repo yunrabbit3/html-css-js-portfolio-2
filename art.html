@@ -14,25 +14,47 @@
         </ul>
     </nav>
 
-    <!-- Car GIF at the top -->
-    <div class="car-gif-container">
-        <img src="image/carin.gif" class="car-gif" alt="Car Animation">
-    </div>
-
     <!-- Title -->
     <header id="page-title">
         CRÉATION
     </header>
 
+    <!-- Background Video Section (art1.mp4) -->
+    <div class="background-video-container">
+        <video class="background-video" autoplay loop muted>
+            <source src="art/art1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Other content goes here, such as art0.mp4 or other elements -->
+    <div class="video-container">
+        <video id="art-video" width="80%" height="auto" controls>
+            <source src="art/art0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+
+    <!-- Car GIF at the top -->
+    <div class="car-gif-container">
+        <img src="image/carin.gif" class="car-gif" alt="Car Animation">
+    </div>
+
+    <!-- Video Section (art0.mp4) -->
+    <div class="video-container">
+        <video id="art-video" width="80%" height="auto" controls>
+            <source src="art/art0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Select the GIF element
-            const gif = document.querySelector('.car-gif');
-
-            // Set a timeout to remove the GIF after its duration
+            const carGif = document.querySelector('.car-gif');
             setTimeout(() => {
-                gif.style.display = 'none'; // Hide the GIF
-            }, 5000); // Adjust the time (in ms) to match the GIF's duration
+                carGif.style.display = 'none';
+            }, 5000); // Hide car GIF after 5 seconds
         });
     </script>
 </body>
