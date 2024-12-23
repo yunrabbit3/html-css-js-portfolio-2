@@ -41,7 +41,7 @@ body {
 
 .nav-links {
     list-style-type: none;
-    font-size: 5rem; /* Large text for sommaire */
+    font-size: 4rem; /* Large text for sommaire */
     line-height: 3.5rem; /* Add spacing between items */
     color: #004AAD;
     display: flex; /* Arrange links horizontally */
