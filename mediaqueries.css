@@ -1,0 +1,9 @@
+/* Responsive font size for arch-container text */
+@media (max-width: 750px) {
+    .arch-container text {
+      font-size: 30px; /* Increase font size when the screen width is under 700px */
+    }
+    .bottom-text {
+        font-size: 20px;
+    }
+}
