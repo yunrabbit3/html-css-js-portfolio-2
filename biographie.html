@@ -5,6 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIOGRAPHIE</title>
     <link rel="stylesheet" href="stylebiographie.css">
+    
+    <!-- Preload important assets -->
+    <link rel="preload" href="ball/ball1.gif" as="image">
+    <link rel="preload" href="ball/ball2.gif" as="image">
+    <link rel="preload" href="ball/ball3.gif" as="image">
+    <link rel="preload" href="ball/ball4.gif" as="image">
+    <link rel="preload" href="ball/ball5.gif" as="image">
+    <link rel="preload" href="ball/ball6.gif" as="image">
+    <link rel="preload" href="ball/ball7.gif" as="image">
+    <link rel="preload" href="ball/ball8.gif" as="image">
+    <link rel="preload" href="ball/ball9.gif" as="image">
+    <link rel="preload" href="ball/ball10.gif" as="image">
+
+    <!-- Simple CSS for bounce animation of balls -->
+    <style>
+/* Floating Balls Styles */
+    .floating-balls img {
+        width: 50px;          /* Keep a fixed width */
+        height: auto;         /* Automatically adjust the height to preserve the aspect ratio */
+        position: absolute;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+
+        /* Example styles for lazy-loaded images */
+        .lazyload {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .lazyloaded {
+            opacity: 1;
+        }
+
+        /* Image fade-in/fade-out animation */
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+
+        .fade-out {
+            animation: fadeOut 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
     <!-- Desktop Navigation -->
@@ -21,26 +83,25 @@
 
     <!-- Floating Balls Left -->
     <div class="floating-balls left">
-        <img src="ball/ball1.gif" class="ball ball1" alt="Ball 1">
-        <img src="ball/ball2.gif" class="ball ball2" alt="Ball 2">
-        <img src="ball/ball3.gif" class="ball ball3" alt="Ball 3">
-        <img src="ball/ball4.gif" class="ball ball4" alt="Ball 4">
-        <img src="ball/ball5.gif" class="ball ball5" alt="Ball 5">
+        <img src="ball/ball1.gif" class="ball ball1" alt="Ball 1" loading="lazy">
+        <img src="ball/ball2.gif" class="ball ball2" alt="Ball 2" loading="lazy">
+        <img src="ball/ball3.gif" class="ball ball3" alt="Ball 3" loading="lazy">
+        <img src="ball/ball4.gif" class="ball ball4" alt="Ball 4" loading="lazy">
+        <img src="ball/ball5.gif" class="ball ball5" alt="Ball 5" loading="lazy">
     </div>
 
     <!-- Floating Balls Right -->
     <div class="floating-balls right">
-        <img src="ball/ball6.gif" class="ball ball6" alt="Ball 6">
-        <img src="ball/ball7.gif" class="ball ball7" alt="Ball 7">
-        <img src="ball/ball8.gif" class="ball ball8" alt="Ball 8">
-        <img src="ball/ball9.gif" class="ball ball9" alt="Ball 9">
-        <img src="ball/ball10.gif" class="ball ball10" alt="Ball 10">
+        <img src="ball/ball6.gif" class="ball ball6" alt="Ball 6" loading="lazy">
+        <img src="ball/ball7.gif" class="ball ball7" alt="Ball 7" loading="lazy">
+        <img src="ball/ball8.gif" class="ball ball8" alt="Ball 8" loading="lazy">
+        <img src="ball/ball9.gif" class="ball ball9" alt="Ball 9" loading="lazy">
+        <img src="ball/ball10.gif" class="ball ball10" alt="Ball 10" loading="lazy">
     </div>
 
     <!-- Centered Text -->
     <div class="centered-text">
         Hey, moi, c’est <a href="#" class="pink-link" onclick="showImage('daphne')">Daphné</a>, grande admiratrice des aléas de la vie.<br><br>
-
         Mon histoire commence à Mont-Tremblant... enfin, non, à Saint-Jovite... en fait, non, non, en réalité, je suis née à Longueuil. Mais revenons à Saint-Jovite : ce petit village perché dans la forêt et la montagne a vu grandir le petit être de lumière que je suis. D’ailleurs, en y repensant, j’étais peut-être un peu trop lumineuse pour cet endroit. Mais après quelques années à rayonner, tout le village a su reconnaître ma valeur. <br><br>
         Il faut dire que j’ai aussi eu la chance d’être entourée d’une <a href="#" class="pink-link" onclick="showImage('famille')">famille incroyable</a> : une sœur pétillante de vie et <a href="#" class="pink-link" onclick="showImage('parents')">deux parents merveilleux</a>, qui ont toujours été là pour raviver ma <a href="#" class="pink-link" onclick="showImage('flamme')">flamme</a> quand ma lumière se faisait plus timide, ou pour me soutenir pendant les matchs de volley, (et oui, parce qu'en plus d'être belle, je suis aussi sportive). C’est ce joli monde qui m’a permis d’être une pionnière pour les habitants de Saint-Jovite, en leur apportant la diversité culturelle dont ils avaient besoin. Parce que oui, à toutes mes qualités, vous pouvez ajouter celle d’être une personne queer.<br><br>
         
@@ -81,8 +142,11 @@
                 case 'litchi':
                     imagePath = "daph/litchi.png";
                     break;
+                case 'gisèle':
+                    imagePath = "daph/gisele.png";
+                    break;
                 case 'amitié':
-                    imagePath = "daph/amitié.png";
+                    imagePath = "daph/amitie.png";
                     break;
                 case 'fish':
                     imagePath = "daph/fish.png";
@@ -97,7 +161,8 @@
                     imagePath = "daph/telenovelas.png";
                     break;
                 default:
-                    return;
+                    imagePath = "";
+                    break;
             }
 
             const imageElement = document.getElementById("displayed-image");
@@ -118,8 +183,6 @@
                 }, 500); // Match the animation duration
             }, 2000);
         }
-
     </script>
-    
 </body>
 </html>
