@@ -186,12 +186,12 @@ html {
 
 .centered-text {
     text-align: center;
-    font-size: 3vh; /* Use viewport height for font size */
+    font-size: 2.8vh; /* Use viewport height for font size */
     line-height: 1.5;
     max-width: 100%; /* Adjust the max-width for better alignment */
     margin: 2rem auto; /* Added margin to create space above and below */
     z-index: 1001; /* Higher than balls, below the title */
-    padding: 5rem 7rem; /* Added padding on top and bottom, and 10rem on left and right */
+    padding: 5rem 15%; /* Added padding on top and bottom, and 10rem on left and right */
     /* Removed pointer-events: none; */
 }
 
