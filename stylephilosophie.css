@@ -122,3 +122,14 @@ video {
         transform: translateX(1500px); /* Move to the right side of the screen */
     }
 }
+
+
+
+/* For portrait orientation (tall screen) */
+@media screen and (max-width: 767px) {
+
+    /* Adjust title font size */
+    #page-title {
+        font-size: 3rem;
+    }
+}
